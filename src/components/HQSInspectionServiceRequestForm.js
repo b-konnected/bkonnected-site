@@ -1,10 +1,10 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
-import asyncValidate from './AsyncValidate'
+import asyncValidate from '../AsyncValidate'
 import CheckboxGroup from "./CheckboxGroup";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
-import {renderTextField, renderDatePicker, renderPhoneField, renderRadioGroup} from "./ReduxFormUtils";
+import {renderTextField, renderDatePicker, renderPhoneField, renderRadioGroup} from "../ReduxFormUtils";
 import {RadioButton} from 'material-ui/RadioButton'
 import {Paper} from "material-ui";
 import Typography from "@material-ui/core/Typography";

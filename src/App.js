@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import TopAppBar from "./TopAppBar";
+import TopAppBar from "./components/TopAppBar";
 import './App.css';
 
 import {
@@ -7,9 +7,9 @@ import {
     NavLink,
     HashRouter
 } from "react-router-dom";
-import HousingConnectionNeededForm from "./HousingConnectionNeededForm";
-import HQSInspectionServiceRequestForm from "./HQSInspectionServiceRequestForm";
-import Home from "./Home";
+import HousingConnectionNeededForm from "./components/HousingConnectionNeededForm";
+import HQSInspectionServiceRequestForm from "./components/HQSInspectionServiceRequestForm";
+import Home from "./pages/Home";
 // import logo from "./logo.svg";
 
 class App extends Component {

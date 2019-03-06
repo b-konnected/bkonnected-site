@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import HQSInspectionServiceRequestForm from "./HQSInspectionServiceRequestForm";
+import HQSInspectionServiceRequestForm from "./components/HQSInspectionServiceRequestForm";
 import {Provider} from "react-redux";
 import {createStore, combineReducers} from 'redux';
 import {reducer as reduxFormReducer} from 'redux-form';
@@ -10,7 +10,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import MuiPickersUtilsProvider from "material-ui-pickers/MuiPickersUtilsProvider";
 import DateFnsUtils from "@date-io/date-fns";
-import HousingConnectionNeededForm from "./HousingConnectionNeededForm";
+import HousingConnectionNeededForm from "./components/HousingConnectionNeededForm";
 import App from "./App";
 
 

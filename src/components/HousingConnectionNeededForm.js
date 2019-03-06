@@ -1,7 +1,7 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
-import asyncValidate from './AsyncValidate'
-import { renderTextField, renderPhoneField } from "./ReduxFormUtils";
+import asyncValidate from '../AsyncValidate'
+import { renderTextField, renderPhoneField } from "../ReduxFormUtils";
 import {Paper} from "material-ui";
 import Typography from "@material-ui/core/Typography";
 
