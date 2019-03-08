@@ -1,14 +1,15 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
 import asyncValidate from '../AsyncValidate'
-import { renderTextField, renderPhoneField } from "../ReduxFormUtils";
+import { renderTextField, renderPhoneField } from "./ReduxFormUtils";
 import {Paper} from "material-ui";
 import Typography from "@material-ui/core/Typography";
+import normalizePhone, {required} from "./ReduxFormValidator";
 
 
 const validate = values => {
     const errors = {}
-    // const requiredFields = ['firstName', 'lastName', 'email', 'favoriteColor', 'notes']
+    const requiredFields = ['firstName', 'lastName', 'email', 'favoriteColor', 'notes']
     // requiredFields.forEach(field => {
     //     if (!values[field]) {
     //         errors[field] = 'Required'
@@ -20,7 +21,7 @@ const validate = values => {
     return errors
 }
 
-const HousingConnectionNeededForm = props => {
+const TenantForm = props => {
     const {handleSubmit, pristine, reset, submitting} = props
     return (
         <form onSubmit={handleSubmit}>
@@ -50,7 +51,7 @@ const HousingConnectionNeededForm = props => {
                 <Field name="firstAndLastName" component={renderTextField} label="First and Last Name"/>
             </div>
             <div>
-                <Field name="phone" component={renderPhoneField} label="Phone #"/>
+                <Field name="phone" component={renderTextField} label="Phone" normalize={normalizePhone} validate={[required]}/>
             </div>
             <div>
                 <Field name="email" component={renderTextField} label="Email"/>
@@ -64,7 +65,7 @@ const HousingConnectionNeededForm = props => {
 }
 
 export default reduxForm({
-    form: 'HousingConnectionNeededForm',  // a unique identifier for this form
+    form: 'TenantForm',  // a unique identifier for this form
     validate,
     asyncValidate
-})(HousingConnectionNeededForm)
+})(TenantForm)
