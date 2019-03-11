@@ -1,12 +1,13 @@
 import React from 'react'
 import {Field, reduxForm} from 'redux-form'
 import asyncValidate from '../AsyncValidate'
-import {renderTextField, renderPhoneField, renderRadioGroup, renderDatePicker} from "./ReduxFormUtils";
+import {renderTextField, renderRadioGroup, renderDatePicker} from "./ReduxFormUtils";
 import {Paper} from "material-ui";
 import Typography from "@material-ui/core/Typography";
 import {RadioButton} from "material-ui/RadioButton";
 import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
+import normalizePhone, {required} from "./ReduxFormValidator";
 
 
 const validate = values => {
@@ -40,9 +41,9 @@ const PropertyDetailsForm = props => {
             <div>
                 <Field name="primaryContactName" component={renderTextField} label="Primary Contact Name"/>
             </div>
-            {/*<div>*/}
-                {/*<Field name="phone" component={renderPhoneField} label="Phone #"/>*/}
-            {/*</div>*/}
+            <div>
+                <Field name="phone" component={renderTextField} label="Phone #" normalize={normalizePhone} validate={[required]}/>
+            </div>
             <div>
                 <Field name="email" component={renderTextField} label="Email"/>
             </div>

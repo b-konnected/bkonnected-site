@@ -9,7 +9,7 @@ import normalizePhone, {required} from "./ReduxFormValidator";
 
 const validate = values => {
     const errors = {}
-    const requiredFields = ['firstName', 'lastName', 'email', 'favoriteColor', 'notes']
+    // const requiredFields = ['firstName', 'lastName', 'email', 'favoriteColor', 'notes']
     // requiredFields.forEach(field => {
     //     if (!values[field]) {
     //         errors[field] = 'Required'
@@ -21,7 +21,7 @@ const validate = values => {
     return errors
 }
 
-const TenantForm = props => {
+const ContactUsForm = props => {
     const {handleSubmit, pristine, reset, submitting} = props
     return (
         <form onSubmit={handleSubmit}>
@@ -48,13 +48,13 @@ const TenantForm = props => {
                 </Paper>
             </div>
             <div>
-                <Field name="firstAndLastName" component={renderTextField} label="First and Last Name"/>
+                <Field name="firstAndLastName" component={renderTextField} label="First and Last Name*"  validate={[required]}/>
             </div>
             <div>
-                <Field name="phone" component={renderTextField} label="Phone" normalize={normalizePhone} validate={[required]}/>
+                <Field name="phone" component={renderTextField} label="Phone Number*" normalize={normalizePhone} validate={[required]}/>
             </div>
             <div>
-                <Field name="email" component={renderTextField} label="Email"/>
+                <Field name="email" component={renderTextField} label="Email*"  validate={[required]}/>
             </div>
             <div>
                 <button type="submit" disabled={pristine || submitting}>Submit</button>
@@ -65,7 +65,7 @@ const TenantForm = props => {
 }
 
 export default reduxForm({
-    form: 'TenantForm',  // a unique identifier for this form
+    form: 'ContactUsForm',  // a unique identifier for this form
     validate,
     asyncValidate
-})(TenantForm)
+})(ContactUsForm)
