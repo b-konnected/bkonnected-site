@@ -1,3 +1,7 @@
+# No longer actively developed!
+See (b-konnected/site|https://github.com/b-konnected/site)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
